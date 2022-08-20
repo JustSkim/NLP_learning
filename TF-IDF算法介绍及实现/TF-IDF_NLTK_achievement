@@ -1,12 +1,34 @@
-from nltk.text import TextCollection
-from nltk.tokenize import word_tokenize
+import nltk
+#nltk.download('punkt') 代码中直接下载会报错，因此只能如下面注释，手动下载
+"""from nltk.text import TextCollection
+from nltk.tokenize import word_tokenize"""
 
-# 首先，构建语料库corpus
+"""
+pip install nltk，会显示能够正常安装
+但实际上，在官方链接https://pypi.org/project/nltk/#files中，已经说明nltk仅支持python3.7以上版本
+因此我们重新创建一个python版本为3.7的环境，命名为py37
+注意，在Pycharm的设置中要对多处进行更改，更改生效后，关闭terminal重新打开，可以发现已经是py37的环境
+
+如果安装后报错，要求我们下载相关文件，并给出了文件的几条参考路径（下载的数据包放到其中一条就可以），可以参考以下链接提供的答案：
+https://docs.python-guide.org/dev/virtualenvs/
+https://www.nltk.org/install.html
+https://www.nltk.org/data.html、
+参照https://blog.csdn.net/kobebryantlin0/article/details/54880933/
+ https://blog.csdn.net/weixin_45626095/article/details/126106652博客的方法并科学上网后依然失败
+最后，本人选择路径"G:\anaconda3\envs\py37\nltk_data\tokenizers"中存放punkt数据包，nltk查询机制很古板
+必须是在路径的"\nltk_data\tokenizers"下有相关文件才行（可以放在该路径下的文件夹中）
+数据包可以在链接 https://github.com/nltk/nltk_data/tree/gh-pages/packages/tokenizers 中下载
+可以使用命令 git clone https://github.com/nltk/nltk_data.git tokenizers 的方式仅下载这一个文件夹文件，不然整个代码库过大
+因此，本人按照教程，把链接 https://github.com/nltk/nltk_data/tree/gh-pages/packages 中多个文件夹全部下载到路径
+"G:\anaconda3\envs\py37\nltk_data\"下
+"""
+
+# 首先，要构建语料库corpus，这里sents是一维数组，存放按标点符号分好的句子
 sents = ['this is sentence one', 'this is sentence two', 'this is sentence three']
-sents = [word_tokenize(sent) for sent in sents]  # 对每个句子进行分词
+sents = [nltk.tokenize.word_tokenize(sent) for sent in sents]  # 对每个句子进行分词
 print(sents)  # 输出分词后的结果
-corpus = TextCollection(sents)  # 构建语料库
-print(corpus)  # 输出语料库
+corpus = nltk.text.TextCollection(sents)  # 构建语料库
+print(corpus)  # 输出语料库，可以看到是一个二维数组，每行存放着sents被分隔出的单词
 
 # 计算语料库中"one"的tf值
 tf = corpus.tf('one', corpus)  # 1/12
@@ -19,3 +41,4 @@ print(idf)
 # 计算语料库中"one"的tf-idf值
 tf_idf = corpus.tf_idf('one', corpus)
 print(tf_idf)
+print(tf*idf)#打印tf*idf的值，发现跟tf_idf一样
