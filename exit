@@ -1,0 +1,15 @@
+ .idea/.gitignore                                   |   8 [31m-----[m
+ .../NLTK_Frequency.py"                             |  27 [31m---------------[m
+ .../NLTK_Pog_Tag.py"                               |  16 [31m---------[m
+ .../NLTK_corpus.py"                                |  19 [31m-----------[m
+ .../NLTK_lemmatization.py"                         |  26 [31m--------------[m
+ .../NLTK_stemming.py"                              |  23 [31m-------------[m
+ .../NLTK_stopwords.py"                             |  18 [31m----------[m
+ .../NLTK_tokenize.py"                              |  20 [31m-----------[m
+ .../NLTK_wordnet.py"                               |  38 [31m---------------------[m
+ Readme.md                                          |   7 [32m+[m[31m---[m
+ .../TF-IDF.py"                                     |  17 [32m+[m[31m--------[m
+ .../TF-IDF_Jieba_achievement"                      |  16 [31m---------[m
+ .../TF-IDF_NLTK_achievement"                       |  37 [32m++++[m[31m----------------[m
+ ...56\211\350\243\205\346\212\245\351\224\231.PNG" | Bin [31m214756[m -> [32m0[m bytes
+ 14 files changed, 9 insertions(+), 263 deletions(-)
