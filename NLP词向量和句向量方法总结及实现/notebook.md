@@ -7,6 +7,7 @@ and their Compositionality》](https://arxiv.org/pdf/1310.4546.pdf)上，[源码
 
 ## 词向量基础
 Word2vec也用词向量来表示词，以下内容引自17年的博客：https://www.cnblogs.com/pinard/p/7160330.html
+
 **One hot representation**
 最早的词向量，很冗长的，使用词向量维度大小为整个词汇表的大小，对于每个具体的词汇表中的词，将对应的位置置为1。
 比如有下面的5个词["King","Queen","Man","Woman","Child"]组成的词汇表，词"Queen"的序号为2， 那么它对应的词向量就是(0,1,0,0,0)。

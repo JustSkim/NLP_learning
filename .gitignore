@@ -1,2 +1,27 @@
 #.idea中存放Pycharm的配置文件
 .idea/
+
+# 一些教程文件
+*.pdf
+*.ppt
+*.pptx
+
+# 一些资源文件
+*.txt
+*.tsv
+*.csv
+
+
+# 训练好的模型文件
+*.model
+*.m
+*.bin
+*.npy
+*.th
+
+*.syn1neg.npy
+*.wv.vectors.npy
+
+
+# Jupyter Notebook
+ */.ipynb_checkpoints/* 

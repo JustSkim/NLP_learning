@@ -30,7 +30,8 @@ def get_dataset_vec(dataset):
 
 if __name__ == '__main__':
     # 数据集获取
-    train_data = pd.read_csv('data/clean_data_train.csv', sep=',', names=['contents', 'labels']).astype(str)
+    #train_data = pd.read_csv('data/clean_data_train.csv', sep=',', names=['contents', 'labels']).astype(str)
+    train_data = pd.read_csv('clean_data_training.csv', sep=',', names=['contents', 'labels']).astype(str)
     test_data = pd.read_csv('data/clean_data_test.csv', sep=',', names=['contents', 'labels']).astype(str)
     cw = lambda x: str(x).split()
     train_data['words'] = train_data['contents'].apply(cw)
